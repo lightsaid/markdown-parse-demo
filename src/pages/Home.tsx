@@ -24,6 +24,10 @@ const Home = () => {
     })
   }, [text])
 
+  useEffect(()=>{
+    marked.highlightBlock()
+  }, [html])
+
   return (
     <div className={styles.pageHome}>
       <div className={`${styles.editor} ${styles.columnBox}`}>

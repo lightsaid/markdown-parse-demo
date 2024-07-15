@@ -73,5 +73,11 @@ export class MarkdownParse {
   parseToHTML(text: string): Promise<string> {
     return this.marked.parse(text) as Promise<string>
   }
+
+  highlightBlock() {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block as HTMLElement);
+    });
+  }
 }
 
